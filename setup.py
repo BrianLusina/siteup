@@ -21,9 +21,7 @@ elif os.environ.get("GITHUB_RUN_ID"):
     VERSION = f"{os.environ.get('GITHUB_RUN_ID')}.{os.environ.get('GITHUB_RUN_NUMBER')}"
 
 # What packages are required for this module to be executed?
-REQUIRED = [
-    "aiohttp"
-]
+REQUIRED = ["aiohttp"]
 
 here = os.path.abspath(os.path.dirname(__file__))
 

@@ -1,0 +1,36 @@
+# ref https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/
+image: python:3.8
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - .venv
+        script:
+          - make setup
+          - make install
+
+    - step:
+        name: Lint Application
+        script:
+          - python -m pip install --upgrade pre-commit
+          - pre-commit run --verbose --all-files --show-diff-on-failure
+
+    - step:
+        name: Run tests
+        script:
+          - make test
+
+  pull-requests:
+    '**':
+      - step:
+          caches:
+            - .venv
+          script:
+            - make setup
+            - make install
+
+      - step:
+          name: Run tests
+          script:
+            - make test

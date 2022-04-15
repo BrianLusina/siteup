@@ -4,6 +4,7 @@ import asyncio
 from .cli import read_user_cli_args, display_check_result
 from .core import site_is_online, site_is_online_async
 
+
 def main():
     user_args = read_user_cli_args()
     urls = get_website_urls(user_args)
@@ -22,8 +23,9 @@ def get_website_urls(user_args):
     urls = user_args.urls
 
     if user_args.input_file:
-        urls += read_urls_from_file(user_args.input_file)        
+        urls += read_urls_from_file(user_args.input_file)
     return urls
+
 
 def read_urls_from_file(file):
     file_path = pathlib.Path(file)
@@ -38,6 +40,7 @@ def read_urls_from_file(file):
         print("Error: input file not found", file=sys.stderr)
     return []
 
+
 async def asynchronous_check(urls):
     async def _check(url):
         error = ""
@@ -50,6 +53,7 @@ async def asynchronous_check(urls):
 
     await asyncio.gather(*(_check(url) for url in urls))
 
+
 def synchronous_check(urls):
     for url in urls:
         error = ""
@@ -59,6 +63,7 @@ def synchronous_check(urls):
             result = False
             error = str(e)
         display_check_result(result, url, error)
+
 
 if __name__ == "__main__":
     main()

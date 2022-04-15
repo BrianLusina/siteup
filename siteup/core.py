@@ -9,7 +9,7 @@ def site_is_online(url: str, timeout=2) -> bool:
     Check if site is up
     """
     parser = urlparse(url)
-    host = parser.netloc or parser.path.split('/')[0]
+    host = parser.netloc or parser.path.split("/")[0]
     error = Exception("unknown error")
     for port in (80, 443):
         connection = HTTPConnection(host, port=port, timeout=timeout)
@@ -21,6 +21,7 @@ def site_is_online(url: str, timeout=2) -> bool:
         finally:
             connection.close()
     raise error
+
 
 async def site_is_online_async(url: str, timeout=2) -> bool:
     """Return True if the target URL is online.

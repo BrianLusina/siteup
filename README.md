@@ -76,7 +76,7 @@ The status of "bing.com" is: "Online!" 👍
 
 ```plain
 python3 -m siteup -u google.com bing.com yahoo.com  unknown-site.org -a
-The status of "unknown-site.org" is: "Offline?" 👎 
+The status of "unknown-site.org" is: "Offline?" 👎
   Error: "Cannot connect to host unknown-site.org:443 ssl:default [Name or service not known]"
 The status of "bing.com" is: "Online!" 👍
 The status of "google.com" is: "Online!" 👍

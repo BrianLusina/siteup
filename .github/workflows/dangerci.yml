@@ -21,9 +21,9 @@ jobs:
         node-version: 16.x
 
     - name: Install dependencies
-      if: steps.cache.outputs.cache-hit != 'true'    
+      if: steps.cache.outputs.cache-hit != 'true'
       run: yarn install danger
-    
+
     - name: Danger CI Check
       uses: danger/danger-js@9.1.8
       env:
