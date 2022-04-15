@@ -4,9 +4,7 @@ name: Gitlab RepoSync
 on:
   push:
     branches:
-      - production
-      - staging
-      - develop
+      - main
 
 jobs:
   sync:
