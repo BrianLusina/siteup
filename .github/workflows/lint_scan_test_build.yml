@@ -1,0 +1,35 @@
+name: Lint Scan Test Build
+
+on: [push, pull_request]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.venv
+          key: ${{ runner.os }}-pyproject-${{ hashFiles('pyproject.toml') }}
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.4
+
+      - name: Install dependencies
+        run: |
+          pip install --user poetry
+          poetry install
+
+      - name: Lint application
+        run: make lint
+
+      - name: License Check
+        run: make license-check
+
+      - name: Test
+        run: make test
+
+      - name: Build
+        run: make build

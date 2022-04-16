@@ -1,7 +1,8 @@
-image: python:3.8
+image: python:3.10.4
 
 stages:
     - lint
+    - security
     - test
     - build
     - publish
@@ -9,18 +10,24 @@ stages:
 
 before_script:
     - pip install --user poetry
+    - poetry install
 
 lint:
     stage: lint
     script:
-        - make lint-docker
-        - python -m pip install --upgrade pre-commit
         - make lint
 
-test:
+license-check:
+    stage: security
     needs:
         - lint
+    script:
+        - make license-check
+
+test:
     stage: test
+    needs:
+        - scan
     script:
         - make test
 
