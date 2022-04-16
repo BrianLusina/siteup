@@ -20,7 +20,7 @@ HOW_DO_YOU_GET_THIS_INTO_PRODUCTION
 
 ## Related PR's
 
-- [system_pr_relates_to](link_to_related_pr) 
+- [system_pr_relates_to](link_to_related_pr)
 
 ## Submitter Checklist
 
