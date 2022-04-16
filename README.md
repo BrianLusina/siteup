@@ -112,6 +112,8 @@ The status of "linkedin.com" is: "Online!" 👍
 
 1. [Python 3.10+](https://www.python.org/)
 2. [aiohttp](https://aiohttp.readthedocs.io/en/stable/)
+3. [poetry](https://python-poetry.org/)
+4. [Black](https://black.readthedocs.io/en/stable/)
 
 ## Contributing
 

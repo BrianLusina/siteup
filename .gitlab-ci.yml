@@ -38,16 +38,6 @@ build:
     script:
         - make build
 
-publish:
-    stage: publish
-    only:
-        - main
-    script:
-        - mkdir -p ~/.pip/
-        - echo -e "[global]\nindex-url = $PIP_REGISTRY_URL" > ~/.pip/pip.conf
-        - make build
-        - twine upload --repository-url $PIP_REGISTRY_URL dist/*
-
 release:
     stage: release
     image: registry.gitlab.com/gitlab-org/release-cli:latest

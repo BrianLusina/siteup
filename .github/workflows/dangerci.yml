@@ -22,7 +22,7 @@ jobs:
 
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit != 'true'
-      run: yarn install danger
+      run: yarn add danger
 
     - name: Danger CI Check
       uses: danger/danger-js@9.1.8

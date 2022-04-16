@@ -13,9 +13,7 @@ jobs:
             ~/.venv
           key: ${{ runner.os }}-pyproject-${{ hashFiles('pyproject.toml') }}
 
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.10.4
+      - uses: actions/setup-python@v3
 
       - name: Install dependencies
         run: |
