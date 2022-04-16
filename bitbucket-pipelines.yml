@@ -1,5 +1,5 @@
 # ref https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/
-image: python:3.8
+image: python:3.10.4
 
 pipelines:
   default:
@@ -13,13 +13,22 @@ pipelines:
     - step:
         name: Lint Application
         script:
-          - python -m pip install --upgrade pre-commit
-          - pre-commit run --verbose --all-files --show-diff-on-failure
+          - make lint
+
+    - step:
+        name: License Check
+        script:
+          - make license-check
 
     - step:
         name: Run tests
         script:
           - make test
+
+    - step:
+        name: Build
+        script:
+          - make build
 
   pull-requests:
     '**':
@@ -34,3 +43,13 @@ pipelines:
           name: Run tests
           script:
             - make test
+
+      - step:
+          name: Lint Application
+          script:
+            - make lint
+
+      - step:
+          name: License Check
+          script:
+            - make license-check

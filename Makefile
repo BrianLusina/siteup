@@ -45,8 +45,11 @@ test:
 test-cover:
 	pytest --cov=siteup tests/
 
-lint:
+precommit:
 	pre-commit run --verbose --all-files --show-diff-on-failure
+
+lint:
+	black siteup
 
 license-check:
     # Reference: https://pypi.org/project/pip-licenses/
