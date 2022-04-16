@@ -3,7 +3,7 @@ name: Lint Scan Test Build
 on: [push, pull_request]
 
 jobs:
-  pre-commit:
+  lint-scan-test-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
