@@ -368,7 +368,7 @@ tomli = {version = ">=1.1.0", markers = "python_version >= \"3.6\""}
 
 [[package]]
 name = "pip-licenses"
-version = "3.5.3"
+version = "3.5.4"
 description = "Dump the software license list of Python packages installed with pip."
 category = "dev"
 optional = false
@@ -1106,8 +1106,8 @@ pep517 = [
     {file = "pep517-0.12.0.tar.gz", hash = "sha256:931378d93d11b298cf511dd634cf5ea4cb249a28ef84160b3247ee9afb4e8ab0"},
 ]
 pip-licenses = [
-    {file = "pip-licenses-3.5.3.tar.gz", hash = "sha256:f44860e00957b791c6c6005a3328f2d5eaeee96ddb8e7d87d4b0aa25b02252e4"},
-    {file = "pip_licenses-3.5.3-py3-none-any.whl", hash = "sha256:59c148d6a03784bf945d232c0dc0e9de4272a3675acaa0361ad7712398ca86ba"},
+    {file = "pip-licenses-3.5.4.tar.gz", hash = "sha256:a8b4dabe2b83901f9ac876afc47b57cff9a5ebe19a6d90c0b2579fa8cf2db176"},
+    {file = "pip_licenses-3.5.4-py3-none-any.whl", hash = "sha256:5e23593c670b8db616b627c68729482a65bb88498eefd8df337762fdaf7936a8"},
 ]
 pkginfo = [
     {file = "pkginfo-1.8.2-py2.py3-none-any.whl", hash = "sha256:c24c487c6a7f72c66e816ab1796b96ac6c3d14d49338293d2141664330b55ffc"},
