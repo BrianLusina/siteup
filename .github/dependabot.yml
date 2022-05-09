@@ -13,7 +13,7 @@ updates:
       timezone: "Africa/Nairobi"
     labels:
       - "dependencies"
-      - "npm"
+      - "pip"
     assignees:
       - dependabot
     reviewers:
